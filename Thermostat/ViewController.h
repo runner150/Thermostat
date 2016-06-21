@@ -8,7 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController {
+    
+    IBOutlet UISlider *slider;
+    IBOutlet UISegmentedControl *segmentedControl;
+    IBOutlet UILabel *label;
+    
+    
+}
+
+-(IBAction)ConvertTemp:(id)sender;
+-(IBAction)DismissKeyboard:(id)sender;
+
 
 
 @end
