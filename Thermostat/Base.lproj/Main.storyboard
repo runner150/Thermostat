@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,35 +18,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UAY-wt-gY0">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UAY-wt-gY0">
                                 <rect key="frame" x="109" y="28" width="157" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="Czv-QD-FoV"/>
+                                </constraints>
                                 <segments>
                                     <segment title="Celcius"/>
                                     <segment title="Fahrenheit"/>
                                 </segments>
                                 <connections>
-                                    <action selector="ConvertTemp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cDg-YJ-nMD"/>
-                                    <action selector="sliderBarMoved" destination="BYZ-38-t0r" eventType="valueChanged" id="2Xv-S5-DJ9"/>
-                                    <action selector="sliderBarMoved" destination="BYZ-38-t0r" eventType="touchUpInside" id="KSv-wA-uvu"/>
+                                    <action selector="segmentedControlIndexChanged" destination="BYZ-38-t0r" eventType="valueChanged" id="HxL-fv-4i2"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2B-IQ-nO2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2B-IQ-nO2">
                                 <rect key="frame" x="109" y="102" width="157" height="159"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="157" id="M0f-uH-0Je"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Ll2-7y-z1d">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-100" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Ll2-7y-z1d">
                                 <rect key="frame" x="18" y="319" width="339" height="31"/>
                                 <connections>
-                                    <action selector="sliderBarMoved" destination="BYZ-38-t0r" eventType="touchUpInside" id="4T0-7R-8bT"/>
+                                    <action selector="sliderBarMoved" destination="BYZ-38-t0r" eventType="valueChanged" id="ZOo-CG-hoy"/>
                                 </connections>
                             </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ll2-7y-z1d" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="0um-tc-8Ds"/>
+                            <constraint firstItem="UAY-wt-gY0" firstAttribute="leading" secondItem="b2B-IQ-nO2" secondAttribute="leading" id="58Z-Gn-5jy"/>
+                            <constraint firstItem="Ll2-7y-z1d" firstAttribute="top" secondItem="b2B-IQ-nO2" secondAttribute="bottom" constant="58" id="68b-38-g5u"/>
+                            <constraint firstItem="Ll2-7y-z1d" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8Ox-vc-phQ"/>
+                            <constraint firstItem="UAY-wt-gY0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ixa-wX-pYX"/>
+                            <constraint firstItem="b2B-IQ-nO2" firstAttribute="top" secondItem="UAY-wt-gY0" secondAttribute="bottom" constant="46" id="kQo-qV-XaB"/>
+                            <constraint firstItem="UAY-wt-gY0" firstAttribute="trailing" secondItem="b2B-IQ-nO2" secondAttribute="trailing" id="m8p-J5-Sz9"/>
+                            <constraint firstItem="b2B-IQ-nO2" firstAttribute="centerX" secondItem="Ll2-7y-z1d" secondAttribute="centerX" id="nXl-oE-amS"/>
+                            <constraint firstItem="UAY-wt-gY0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="uJN-RO-QGF"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ll2-7y-z1d" secondAttribute="bottom" constant="318" id="xoX-qV-1wQ"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>

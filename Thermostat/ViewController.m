@@ -29,20 +29,30 @@
     
     self.label.text = sliderStringValue;
 
+    
+        
 
 }
 
--(IBAction)ConvertTemp:(id)sender {
+-(IBAction) segmentedControlIndexChanged
+{
+    switch (self.segmentedControl.selectedSegmentIndex)
+    {
+        case 0:
+            self.slider.value = ((self.slider.value-32)/1.8);
+            break;
+        case 1: self.slider.value =((self.slider.value*1.8)+32);
+            break;
+        default: 
+            break; 
+    }
     
-    int fahrenheit = [label.text doubleValue];
-    int celsius = (fahrenheit - 32 / 1.8);
-    NSString *label = [[NSString alloc] initWithFormat:@"%4.2f", celsius];
+    NSString *sliderStringValue = [NSString stringWithFormat:@"%.0f", self.slider.value];
+    self.label.text = sliderStringValue;
     
-}
     
--(IBAction)DismissKeyboard:(id)sender {
     
-    [self resignFirstResponder];
+
     
 }
 

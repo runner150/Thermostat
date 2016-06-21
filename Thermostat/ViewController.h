@@ -10,15 +10,12 @@
 
 @interface ViewController : UIViewController {
     
-    IBOutlet UISlider *slider;
-    IBOutlet UISegmentedControl *segmentedControl;
-    IBOutlet UILabel *label;
+    
     
     
 }
 
--(IBAction)ConvertTemp:(id)sender;
--(IBAction)DismissKeyboard:(id)sender;
+
 
 
 
